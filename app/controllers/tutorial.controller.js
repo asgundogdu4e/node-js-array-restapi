@@ -1,0 +1,50 @@
+let id = 5;
+let tutorials = [
+    { id: 1, title: "Vue", description: "Vue öğren", published: false },
+    { id: 2, title: "Vuex", description: "Vue ve Vuex'i beraber kodla", published: true },
+    { id: 3, title: "React", description: "React", published: false },
+    { id: 4, title: "Redux", description: "React and Redux kullanmayı öğren", published: true },
+    { id: 5, title: "Temel Dini Bilgiler", description: "Temel itikadi ve fıkıh bilgileri", published: false },
+];
+
+const sortTutorials = () => {
+    tutorials.sort((a, b) => {
+        if (a.is < b.is) { return -1; }
+        if (a.is > b.is) { return 1; }
+        return 0;
+    });
+};
+
+const sendTutorials = (res) => {
+    sortTutorials();
+    res.send(tutorials);
+    //res.send({ netice: true,  tutorials });res.send({ netice: true,  tutorials });
+};
+
+const getTutorials = (req, res) => {
+    sendTutorials(res);
+};
+
+const saveTutorial = (req, res) => {
+    const veriler = req.body;
+    id++;
+    tutorials.push({ id, ...veriler, completed: false });
+    sendTutorials(res);
+};
+
+const deleteTutorial = (req, res) => {
+    const id = req.params.id;
+    tutorials = tutorials.filter((tutorial) => tutorial.id != id);
+    sendTutorials(res);
+};
+
+const updateTutorial = (req, res) => {
+    const id = req.body.id;
+    tutorials = tutorials.filter((tutorial) => tutorial.id != id);
+    tutorials = tutorials.concat({ ...req.body });
+    sendTutorials(res);
+};
+
+module.exports = {
+    getTutorials, saveTutorial, deleteTutorial, updateTutorial
+}
