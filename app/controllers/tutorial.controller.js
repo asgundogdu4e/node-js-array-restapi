@@ -18,7 +18,6 @@ const sortTutorials = () => {
 const sendTutorials = (res) => {
     sortTutorials();
     res.send(tutorials);
-    //res.send({ netice: true,  tutorials });res.send({ netice: true,  tutorials });
 };
 
 const getTutorials = (req, res) => {
@@ -39,9 +38,9 @@ const deleteTutorial = (req, res) => {
 };
 
 const updateTutorial = (req, res) => {
-    const id = req.body.id;
+    const id = req.params.id;
     tutorials = tutorials.filter((tutorial) => tutorial.id != id);
-    tutorials = tutorials.concat({ ...req.body });
+    tutorials = tutorials.concat({ id, ...req.body });
     sendTutorials(res);
 };
 

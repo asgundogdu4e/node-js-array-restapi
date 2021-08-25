@@ -18,7 +18,6 @@ const sortTodos = () => {
 const sendTodos = (res) => {
     sortTodos();
     res.send(todos);
-    //res.send({ netice: true,  todos });res.send({ netice: true,  todos });
 };
 
 const getTodos = (req, res) => {
@@ -39,9 +38,9 @@ const deleteTodo = (req, res) => {
 };
 
 const updateTodo = (req, res) => {
-    const id = req.body.id;
+    const id = req.params.id;
     todos = todos.filter((todo) => todo.id != id);
-    todos = todos.concat({ ...req.body });
+    todos = todos.concat({id, ...req.body });
     sendTodos(res);
 };
 
