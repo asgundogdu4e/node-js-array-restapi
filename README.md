@@ -44,9 +44,9 @@ curl --request POST \
   --url http://localhost:8080/api/todos \
   --header 'Content-Type: application/json' \
   --data '  {
-    "task": "Yeni ders",
-    "description": "Yep yeni bir ders."
-  }'
+    "task": "Yatağını topla.",
+    "description": "Sabah kalkar kalkmaz yatağını topla."
+	}'
 ````  
 ### JS Axios ile (with JS Axios)
 ```js
@@ -56,7 +56,7 @@ const options = {
   method: 'POST',
   url: 'http://localhost:8080/api/todos',
   headers: {'Content-Type': 'application/json'},
-  data: {task: 'Yeni ders', description: 'Yep yeni bir ders.'}
+  data: {task: 'Yatağını topla.', description: 'Sabah kalkar kalkmaz yatağını topla.'}
 };
 
 axios.request(options).then(function (response) {
@@ -65,6 +65,8 @@ axios.request(options).then(function (response) {
   console.error(error);
 });
 ```
+### Insomnia İle (with Insomnia)
+![alt text](tutorial/post-todo.png?raw=true)
 #
 ## Görevi Güncellemek (Update Todo)
 ### Konsolda (On Console)
@@ -95,6 +97,8 @@ axios.request(options).then(function (response) {
   console.error(error);
 });
 ```
+### Insomnia İle (with Insomnia)
+![alt text](tutorial/put-todo.png?raw=true)
 #
 ## Görevi Silmek (Delete Todo)
 ### Konsolda (On Console)
@@ -114,6 +118,9 @@ axios.request(options).then(function (response) {
   console.error(error);
 });
 ```
+### Insomnia İle (with Insomnia)
+![alt text](tutorial/delete-todo.png?raw=true)
+#
 # Öğreticiler (Tutorials)
 ## Öğreticileri Getir (Get Tutorials)
 ### Konsolda (On Console)
