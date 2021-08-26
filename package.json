@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-express-sequelize-postgresql",
+  "name": "nodejs-express-array-data-rest-api",
   "version": "1.0.0",
   "description": "Node.js Rest Apis with Express, Array Data",
   "main": "server.js",
