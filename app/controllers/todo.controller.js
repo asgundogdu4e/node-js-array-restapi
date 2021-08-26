@@ -1,3 +1,4 @@
+const { neticeGonder } = require('./../../ktb/netice');
 let id = 5;
 let todos = [
     { id: 1, task: "Kitap oku", description: "Listedeki kitapları oku.", completed: false },
@@ -15,9 +16,10 @@ const sortTodos = () => {
     });
 };
 
-const sendTodos = (res) => {
+const sendTodos = async (res) => {
     sortTodos();
-    res.send(todos);
+    const netice = await neticeGonder(todos, "", "");
+    res.send(netice);
 };
 
 const getTodos = (req, res) => {
@@ -40,7 +42,7 @@ const deleteTodo = (req, res) => {
 const updateTodo = (req, res) => {
     const id = req.params.id;
     todos = todos.filter((todo) => todo.id != id);
-    todos = todos.concat({id, ...req.body });
+    todos = todos.concat({ id, ...req.body });
     sendTodos(res);
 };
 

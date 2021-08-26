@@ -1,3 +1,4 @@
+const { neticeGonder } = require('./../../ktb/netice');
 let id = 5;
 let tutorials = [
     { id: 1, title: "Vue", description: "Vue öğren", published: false },
@@ -15,9 +16,10 @@ const sortTutorials = () => {
     });
 };
 
-const sendTutorials = (res) => {
+const sendTutorials = async (res) => {
     sortTutorials();
-    res.send(tutorials);
+    const netice = await neticeGonder(todos, "", "");
+    res.send(netice);
 };
 
 const getTutorials = (req, res) => {

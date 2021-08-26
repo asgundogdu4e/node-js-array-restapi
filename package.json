@@ -15,7 +15,7 @@
     "api"
   ],
   "author": "AsG",
-  "license": "GPLv3",
+  "license": "GNU General Public License v3.0",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
