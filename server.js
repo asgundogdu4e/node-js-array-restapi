@@ -8,30 +8,25 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-const responseOptions = function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With, Content-Type, Authorization, Accept, Origin, TOKEN, token"
-  );
-  if (req.method === "OPTIONS") {
-    res.header(
-      "Access-Control-Allow-Methods",
-      "PATCH, GET, POST, PUT, DELETE, OPTIONS, TOKEN, token"
-    );
-    return res.status(200).json({ Netice: "OPTIONS" });
-  }
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, token');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  console.log(res.header);
   next();
-};
-
-app.use(responseOptions);
+});
 
 tutorialRoutes(app);
 todoRoutes(app);
+
+app.get("/api/auth", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/api/", (req, res) => {
+  res.send("Api test OK!");
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
