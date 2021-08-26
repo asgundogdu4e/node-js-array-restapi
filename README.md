@@ -1,7 +1,7 @@
 # Node.js, Express ve Dizi Veri ile Rest API Örneği
 # Node.js Rest APIs example with Express, Array Data
-### Node.js ve Express ile Array kullananarak hizmet sunan Rest API örneği.
-### Example of Rest API serving using Array with Node.js and Express.
+### Front End geliştirmeye yeni başlamış ve henüz back end tecrübesi olmayan yazılımcılar için kurulması ve kullanılması kolay bir Rest API örneği.
+### An easy-to-install and easy-to-use Rest API example for developers who have just started Front End development and don't have back end experience yet. 
 #
 ## Kurulum (Installation)
 #### `npm i`
