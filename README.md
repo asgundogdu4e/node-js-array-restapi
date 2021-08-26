@@ -34,6 +34,8 @@ axios.request(options).then(function (response) {
   console.error(error);
 });
 ```
+### Insomnia İle (with Insomnia)
+![alt text](tutorial/get-todos.png?raw=true)
 #
 ## Görev Eklemek (Insert Todo)
 ### Konsolda (On Console)
