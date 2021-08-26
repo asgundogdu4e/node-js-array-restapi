@@ -18,7 +18,9 @@
 # Görevler (Todos)
 ## Görevleri Getir (Get Todos)
 ### Konsolda (On Console)
-#### `curl --request GET --url http://localhost:8080/api/todos`
+````
+curl --request GET --url http://localhost:8080/api/todos
+````
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
@@ -34,13 +36,15 @@ axios.request(options).then(function (response) {
 #
 ## Görev Eklemek (Insert Todo)
 ### Konsolda (On Console)
-#### `curl --request POST \`
-#### `--url http://localhost:8080/api/todos \`
-#### `  --header 'Content-Type: application/json' \`
-#### `  --data '  {`
-#### `    "task": "Yeni ders",`
-#### `    "description": "Yep yeni bir ders."`
-#### `  }'`
+````
+curl --request POST \
+  --url http://localhost:8080/api/todos \
+  --header 'Content-Type: application/json' \
+  --data '  {
+    "task": "Yeni ders",
+    "description": "Yep yeni bir ders."
+  }'
+````  
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
@@ -61,7 +65,7 @@ axios.request(options).then(function (response) {
 #
 ## Görevi Güncellemek (Update Todo)
 ### Konsolda (On Console)
-```
+````
 curl --request PUT \
   --url http://localhost:8080/api/todos/1 \
   --header 'Content-Type: application/json' \
@@ -70,7 +74,7 @@ curl --request PUT \
     "description": "Listedeki kitapları oku.",
     "completed": true
   }'
-```  
+```` 
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
@@ -91,10 +95,10 @@ axios.request(options).then(function (response) {
 #
 ## Görevi Silmek (Delete Todo)
 ### Konsolda (On Console)
-```
+````
 curl --request DELETE \
   --url http://localhost:8080/api/todos/1
-```  
+````
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
@@ -107,8 +111,8 @@ axios.request(options).then(function (response) {
   console.error(error);
 });
 ```
-# Öğriticiler (Tutorials)
-## Öğriticileri Getir (Get Tutorials)
+# Öğreticiler (Tutorials)
+## Öğreticileri Getir (Get Tutorials)
 ### Konsolda (On Console)
 #### `curl --request GET --url http://localhost:8080/api/tutorials`
 ### JS Axios ile (with JS Axios)
@@ -124,15 +128,17 @@ axios.request(options).then(function (response) {
 });
 ```
 #
-## Öğritici Eklemek (Insert Tutorial)
+## Öğretici Eklemek (Insert Tutorial)
 ### Konsolda (On Console)
-#### `curl --request POST \`
-#### `--url http://localhost:8080/api/tutorials \`
-#### `  --header 'Content-Type: application/json' \`
-#### `  --data '  {`
-#### `    "title": "Yeni ders",`
-#### `    "description": "Yep yeni bir ders."`
-#### `  }'`
+````
+curl --request POST \
+  --url http://localhost:8080/api/tutorials \
+  --header 'Content-Type: application/json' \
+  --data '  {
+    "title": "Yeni ders",
+    "description": "Yep yeni bir ders."
+  }'
+````
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
@@ -151,9 +157,9 @@ axios.request(options).then(function (response) {
 });
 ```
 #
-## Öğriticiyi Güncellemek (Update Tutorial)
+## Öğreticiyi Güncellemek (Update Tutorial)
 ### Konsolda (On Console)
-```
+````
 curl --request PUT \
   --url http://localhost:8080/api/tutorials/1 \
   --header 'Content-Type: application/json' \
@@ -162,7 +168,7 @@ curl --request PUT \
     "description": "Listedeki kitapları oku.",
     "published": true
   }'
-```  
+````  
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
@@ -181,12 +187,12 @@ axios.request(options).then(function (response) {
 });
 ```
 #
-## Öğriticii Silmek (Delete Tutorial)
+## Öğreticiyi Silmek (Delete Tutorial)
 ### Konsolda (On Console)
-```
+````
 curl --request DELETE \
   --url http://localhost:8080/api/tutorials/1
-```  
+````  
 ### JS Axios ile (with JS Axios)
 ```js
 import axios from "axios";
