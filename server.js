@@ -19,7 +19,6 @@ const responseOptions = function (req, res, next) {
     "X-Requested-With, Content-Type, Authorization, Accept, Origin, TOKEN, token"
   );
   if (req.method === "OPTIONS") {
-    //console.log("OPTIONS")
     res.header(
       "Access-Control-Allow-Methods",
       "PATCH, GET, POST, PUT, DELETE, OPTIONS, TOKEN, token"

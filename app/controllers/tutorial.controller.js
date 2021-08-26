@@ -3,14 +3,14 @@ let tutorials = [
     { id: 1, title: "Vue", description: "Vue öğren", published: false },
     { id: 2, title: "Vuex", description: "Vue ve Vuex'i beraber kodla", published: true },
     { id: 3, title: "React", description: "React", published: false },
-    { id: 4, title: "Redux", description: "React and Redux kullanmayı öğren", published: true },
-    { id: 5, title: "Temel Dini Bilgiler", description: "Temel itikadi ve fıkıh bilgileri", published: false },
+    { id: 4, title: "Redux", description: "React ve Redux kullanmayı öğren", published: true },
+    { id: 5, title: "Temel Dini Bilgiler", description: "Temel itikadi ve fıkıh bilgilerini öğren", published: false },
 ];
 
 const sortTutorials = () => {
     tutorials.sort((a, b) => {
-        if (a.is < b.is) { return -1; }
-        if (a.is > b.is) { return 1; }
+        if (a.title < b.title) { return -1; }
+        if (a.title > b.title) { return 1; }
         return 0;
     });
 };

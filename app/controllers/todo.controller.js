@@ -9,8 +9,8 @@ let todos = [
 
 const sortTodos = () => {
     todos.sort((a, b) => {
-        if (a.is < b.is) { return -1; }
-        if (a.is > b.is) { return 1; }
+        if (a.task < b.task) { return -1; }
+        if (a.task > b.task) { return 1; }
         return 0;
     });
 };

@@ -1,7 +1,7 @@
 # Node.js, Express ve Dizi Veri ile Rest API Örneği
 # Node.js Rest APIs example with Express, Array Data
-### Front End geliştirmeye yeni başlamış ve henüz back end tecrübesi olmayan yazılımcılar için kurulması ve kullanılması kolay bir Rest API örneği.
-### An easy-to-install and easy-to-use Rest API example for developers who have just started Front End development and don't have back end experience yet. 
+### Front End geliştirmeye yeni başlamış ve henüz back end tecrübesi olmayan yazılımcılar için front end eğitimlerinde kullanılmak üzere tasarlanmış, kurulması ve kullanılması kolay bir Rest API örneği.
+### An easy-to-install and easy-to-use Rest API example designed to be used in front end trainings for software developers who have just started front end development and who do not have back end experience yet.
 #
 ## Kurulum (Installation)
 #### `npm i`
