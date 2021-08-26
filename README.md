@@ -1,4 +1,5 @@
-# node-js-array-restapi
+# Node.js, Express ve Dizi Veri ile Rest API Örneği
+# Node.js Rest APIs example with Express, Array Data
 ### Node.js ve Express ile Array kullananarak hizmet sunan Rest API örneği.
 ### Example of Rest API serving using Array with Node.js and Express.
 #
