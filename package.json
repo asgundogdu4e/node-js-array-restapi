@@ -1,7 +1,7 @@
 {
   "name": "nodejs-express-sequelize-postgresql",
   "version": "1.0.0",
-  "description": "Node.js Rest Apis with Express, Sequelize & PostgreSQL",
+  "description": "Node.js Rest Apis with Express, Array Data",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
