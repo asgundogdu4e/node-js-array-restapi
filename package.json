@@ -4,7 +4,8 @@
   "description": "Node.js Rest Apis with Express, Sequelize & PostgreSQL",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "murad": "nodemon server.js"
   },
   "keywords": [
     "nodejs",
