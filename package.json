@@ -10,10 +10,9 @@
   "keywords": [
     "nodejs",
     "express",
-    "sequelize",
+    "array",
     "rest",
-    "api",
-    "postgresql"
+    "api"
   ],
   "author": "AsG",
   "license": "GPLv3",
