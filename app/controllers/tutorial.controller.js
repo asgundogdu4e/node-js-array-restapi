@@ -16,34 +16,36 @@ const sortTutorials = () => {
     });
 };
 
-const sendTutorials = async (res) => {
-    sortTutorials();
-    const netice = await neticeGonder(todos, "", "");
+const sendTutorials = async (res, records) => {
+    const netice = await neticeGonder(records, null, null);
     res.send(netice);
 };
 
 const getTutorials = (req, res) => {
-    sendTutorials(res);
+    sortTutorials();
+    sendTutorials(res, tutorials);
 };
 
 const saveTutorial = (req, res) => {
     const veriler = req.body;
     id++;
-    tutorials.push({ id, ...veriler, completed: false });
-    sendTutorials(res);
+    const newTutorial = { id, ...veriler, completed: false }
+    tutorials.push(newTutorial);
+    sendTutorials(res, newTutorial);
 };
 
 const deleteTutorial = (req, res) => {
     const id = req.params.id;
     tutorials = tutorials.filter((tutorial) => tutorial.id != id);
-    sendTutorials(res);
+    sendTutorials(res, {});
 };
 
 const updateTutorial = (req, res) => {
     const id = req.params.id;
     tutorials = tutorials.filter((tutorial) => tutorial.id != id);
-    tutorials = tutorials.concat({ id, ...req.body });
-    sendTutorials(res);
+    const newTutorial = { id, ...req.body }
+    tutorials = tutorials.concat(newTutorial);
+    sendTutorials(res, newTutorial);
 };
 
 module.exports = {

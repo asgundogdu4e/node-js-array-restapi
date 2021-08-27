@@ -16,34 +16,36 @@ const sortTodos = () => {
     });
 };
 
-const sendTodos = async (res) => {
-    sortTodos();
-    const netice = await neticeGonder(todos, "", "");
+const sendTodos = async (res, records) => {
+    const netice = await neticeGonder(records, null, null);
     res.send(netice);
 };
 
 const getTodos = (req, res) => {
-    sendTodos(res);
+    sortTodos();
+    sendTodos(res, todos);
 };
 
 const saveTodo = (req, res) => {
     const veriler = req.body;
     id++;
-    todos.push({ id, ...veriler, completed: false });
-    sendTodos(res);
+    const newTodo = { id, ...veriler, completed: false }
+    todos.push(newTodo);
+    sendTodos(res, newTodo);
 };
 
 const deleteTodo = (req, res) => {
     const id = req.params.id;
     todos = todos.filter((todo) => todo.id != id);
-    sendTodos(res);
+    sendTodos(res, {});
 };
 
 const updateTodo = (req, res) => {
     const id = req.params.id;
     todos = todos.filter((todo) => todo.id != id);
-    todos = todos.concat({ id, ...req.body });
-    sendTodos(res);
+    const newTodo = { id, ...req.body }
+    todos = todos.concat(newTodo);
+    sendTodos(res, newTodo);
 };
 
 module.exports = {
