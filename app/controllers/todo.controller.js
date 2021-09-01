@@ -48,6 +48,16 @@ const updateTodo = (req, res) => {
     sendTodos(res, newTodo);
 };
 
+
+const findTodosByTask = (req, res) => {
+    const task = req.params.task;
+    const filteredTodos = todos.filter((todo) =>
+      todo.task.includes(task)
+    );
+    sortTodos();
+    sendTodos(res, filteredTodos);
+  };
+
 module.exports = {
-    getTodos, saveTodo, deleteTodo, updateTodo
+    getTodos, saveTodo, deleteTodo, updateTodo, findTodosByTask
 }

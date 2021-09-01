@@ -1,24 +1,36 @@
 const { neticeGonder } = require("./../../ktb/netice");
 let id = 5;
 let tutorials = [
-  { id: 1, title: "Vue", description: "Vue öğren", published: false },
+  {
+    id: 1,
+    title: "Temelden Vue Kursu",
+    description: "Vue ile kodlamayı öğrenin.",
+    published: false,
+  },
   {
     id: 2,
     title: "Vuex",
-    description: "Vue ve Vuex'i beraber kodla",
+    description:
+      "Learn How to manage the state of your vue js app with using Vuex.",
     published: true,
   },
-  { id: 3, title: "React", description: "React", published: false },
+  {
+    id: 3,
+    title: "React",
+    description: "React'ın derinliklerine inin.",
+    published: false,
+  },
   {
     id: 4,
     title: "Redux",
-    description: "React ve Redux kullanmayı öğren",
+    description:
+      "It lets your React components read data from a Redux store, and dispatch actions to the store to update state.",
     published: true,
   },
   {
     id: 5,
     title: "Temel Dini Bilgiler",
-    description: "Temel itikadi ve fıkıh bilgilerini öğren",
+    description: "Temel itikadi ve fıkıh bilgilerini öğrenin.",
     published: false,
   },
 ];
@@ -37,7 +49,9 @@ const sortTutorials = () => {
 
 const sendTutorials = async (res, records) => {
   const netice = await neticeGonder(records, null, null);
-  res.send(netice);
+  setTimeout(() => {
+    res.send(netice);
+  }, 1000);
 };
 
 const getTutorials = (req, res) => {
@@ -67,9 +81,19 @@ const updateTutorial = (req, res) => {
   sendTutorials(res, newTutorial);
 };
 
+const findTutorialsByTitle = (req, res) => {
+  const title = req.params.title;
+  const filteredTutorials = tutorials.filter((tutorial) =>
+    tutorial.title.includes(title)
+  );
+  sortTutorials();
+  sendTutorials(res, filteredTutorials);
+};
+
 module.exports = {
   getTutorials,
   saveTutorial,
   deleteTutorial,
   updateTutorial,
+  findTutorialsByTitle,
 };
